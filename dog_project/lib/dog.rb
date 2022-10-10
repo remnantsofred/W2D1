@@ -1,5 +1,5 @@
 class Dog
-    def initialize
+    def initialize(name, breed, age, bark, favorite_foods)
         @name = name
         @breed = breed
         @age = age
@@ -31,7 +31,23 @@ class Dog
         @favorite_foods
     end
     
+    def age=(number)
+        @age = number
+    end
 
+    def bark
+        if @age > 3
+            return @bark.upcase 
+        else
+            return @bark.downcase
+        end
+    end
+
+    def favorite_food?(str)
+        favorite_foods.map! { |food| food.downcase }
+        str = str.downcase
+        favorite_foods.include?(str)
+    end
 
 end
- 
+#test
